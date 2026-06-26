@@ -1,3 +1,4 @@
+
 name: Build Android APK
 on: [push]
 jobs:
@@ -9,10 +10,14 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - run: chmod +x ./gradlew
-      - run: ./gradlew assembleDebug
+      # Try using the absolute path or just verifying the file exists
+      - name: Verify Gradle file
+        run: ls -la ./gradlew
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
-          
