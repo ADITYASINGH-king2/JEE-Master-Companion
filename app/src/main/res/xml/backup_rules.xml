@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include Room database files specifically and via folder wildcards (.db, .db-shm, .db-wal) -->
+    <include domain="database" path="."/>
+    <include domain="database" path="jee_companion_database"/>
+    <include domain="database" path="jee_companion_database-shm"/>
+    <include domain="database" path="jee_companion_database-wal"/>
+    
+    <!-- Includes EncryptedSharedPreferences directories/files -->
+    <include domain="sharedpref" path="."/>
+    <include domain="sharedpref" path="secure_jee_companion_prefs.xml"/>
+
+    <!-- Explicitly exclude any app cache folders or telemetry metrics -->
+    <exclude domain="root" path="cache"/>
+    <exclude domain="root" path="no_backup"/>
+    <exclude domain="file" path="telemetry"/>
+    <exclude domain="file" path="metrics"/>
+</full-backup-content>

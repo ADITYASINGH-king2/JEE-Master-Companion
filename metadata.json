@@ -1,0 +1,6 @@
+{
+  "name": "JEE Prep",
+  "description": "High-Yield JEE Advanced and Main Physics and Chemistry notebook and pattern tracker.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
